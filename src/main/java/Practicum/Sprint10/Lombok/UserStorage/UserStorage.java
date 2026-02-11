@@ -31,10 +31,6 @@ public class UserStorage {
     }
 
     private void addUser() {
-        final User user = new User();
-        final Details details = new Details();
-        user.setDetails(details);
-
         System.out.println("Введите электронную почту пользователя => ");
         final String email = scanner.nextLine();
 
@@ -44,10 +40,13 @@ public class UserStorage {
         System.out.println("Введите фамилию пользователя => ");
         final String lastName = scanner.nextLine();
 
-        details.setEmail(email);
-        details.setFirstName(firstName);
-        details.setLastName(lastName);
+        final Details details = Details.builder()
+                .email(email)
+                .firstName(firstName)
+                .lastName(lastName)
+                .build();
 
+        final User user = User.builder().details(details).build();
         storage.put(user);
         System.out.println("Пользователь добавлен");
     }

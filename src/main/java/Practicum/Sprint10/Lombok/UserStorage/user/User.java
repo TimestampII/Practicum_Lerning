@@ -1,18 +1,15 @@
 package Practicum.Sprint10.Lombok.UserStorage.user;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
+@Builder
 public class User {
     // детализированная информация о пользователе
     @NonNull
     private Details details;
+    @Builder.Default
     // информация о покупках пользователя
-    private PurchasesInformation purchasesInformation = new PurchasesInformation();
+    private PurchasesInformation purchasesInformation = PurchasesInformation.builder().build();
 }
 

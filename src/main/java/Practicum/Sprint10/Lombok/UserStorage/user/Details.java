@@ -1,16 +1,14 @@
 package Practicum.Sprint10.Lombok.UserStorage.user;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.Builder;
 
 import java.util.Date;
 
 // детализированная информация о пользователе
-@Data
+@Value
+@Builder
 @RequiredArgsConstructor
-@NoArgsConstructor
 public class Details {
     // электронная почта
     @NonNull
