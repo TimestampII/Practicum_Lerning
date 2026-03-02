@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Chicken {
-    private final Egg egg;
+    private  Egg egg;
 
     @Autowired
     public Chicken(Egg egg){
